@@ -1,0 +1,115 @@
+{
+	"name": "sp_Mike",
+	"plugin-id": "Sprite",
+	"sid": 175447387509937,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [
+		{
+			"name": "Ismoving",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 924103005446352
+		},
+		{
+			"name": "MoveAngle",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 876375398190105
+		},
+		{
+			"name": "TapTimer",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 273595035789938
+		},
+		{
+			"name": "CurrentDir",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 794433936477434
+		},
+		{
+			"name": "Pending",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 311474939846592
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "EightDir",
+			"name": "8Direction",
+			"sid": 360709212409482
+		},
+		{
+			"behaviorId": "scrollto",
+			"name": "ScrollTo",
+			"sid": 753100517298728
+		},
+		{
+			"behaviorId": "bound",
+			"name": "BoundToLayout",
+			"sid": 888379199566615
+		},
+		{
+			"behaviorId": "TileMovement",
+			"name": "TileMovement",
+			"sid": 416136734156869
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 55,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 4928467,
+						"collisionPoly": {
+							"points": [
+								1,
+								0.015625,
+								1,
+								0.03125,
+								1,
+								0.875,
+								1,
+								0.921875,
+								1,
+								0.984375,
+								0,
+								0.953125,
+								0,
+								0.03125
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 982579314932260,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
