@@ -1,42 +1,31 @@
 {
-	"name": "sp_TEMBok",
+	"name": "sp_licin",
 	"plugin-id": "Sprite",
-	"sid": 469074547221281,
+	"sid": 229553920744330,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [
-		{
-			"behaviorId": "solid",
-			"name": "Solid",
-			"sid": 563577832092905
-		},
-		{
-			"behaviorId": "shadowcaster",
-			"name": "ShadowCaster",
-			"sid": 494525367874395
-		}
-	],
+	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
 		"items": [
 			{
 				"frames": [
 					{
-						"width": 4,
-						"height": 16,
+						"width": 250,
+						"height": 250,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"fileType": "image/png",
-						"imageSpriteId": 7819716,
+						"imageSpriteId": 6603730,
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
 					}
 				],
-				"sid": 383794761705702,
+				"sid": 648794949164364,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

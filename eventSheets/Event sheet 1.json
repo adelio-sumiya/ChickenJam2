@@ -7,432 +7,1317 @@
 				{
 					"id": "on-start-of-layout",
 					"objectClass": "System",
-					"sid": 572262699637076
+					"sid": 680056665522793
 				}
 			],
 			"actions": [
 				{
 					"id": "set-layout-scale",
 					"objectClass": "System",
-					"sid": 530761449860228,
+					"sid": 621099537415657,
 					"parameters": {
 						"scale": "2"
 					}
 				}
 			],
-			"sid": 654643836120463
+			"sid": 786131950062400
 		},
 		{
-			"eventType": "block",
-			"conditions": [],
-			"actions": [],
-			"sid": 136964341155033
-		},
-		{
-			"eventType": "block",
-			"conditions": [
+			"eventType": "group",
+			"disabled": false,
+			"title": "Mike",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
 				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 208637211694195,
-					"parameters": {
-						"key": 32
-					}
+					"eventType": "group",
+					"disabled": false,
+					"title": "Movement",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 417850970084298,
+									"parameters": {
+										"key": 32
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "sp_Mike",
+									"sid": 947269669187287,
+									"parameters": {
+										"instance-variable": "IsTrapped"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [],
+							"sid": 330374876098044,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "sp_Mike",
+											"sid": 446960326775468,
+											"parameters": {
+												"instance-variable": "TapTimer",
+												"comparison": 4,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-ignoring-input",
+											"objectClass": "sp_Mike",
+											"sid": 536304349435751,
+											"behaviorType": "TileMovement",
+											"parameters": {
+												"input": "start-ignoring"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "sp_Mike",
+											"sid": 599766627512622,
+											"parameters": {
+												"instance-variable": "CurrentDir",
+												"value": "(Self.CurrentDir +1) % 4"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "sp_Mike",
+											"sid": 338421928549304,
+											"parameters": {
+												"instance-variable": "TapTimer",
+												"value": "0"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 587114709344418,
+											"parameters": {
+												"seconds": "0.15"
+											}
+										},
+										{
+											"id": "set-ignoring-input",
+											"objectClass": "sp_Mike",
+											"sid": 358094345020705,
+											"behaviorType": "TileMovement",
+											"parameters": {
+												"input": "stop-ignoring"
+											}
+										}
+									],
+									"sid": 930599018539645
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 809719082732342
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "sp_Mike",
+											"sid": 170178190765727,
+											"parameters": {
+												"instance-variable": "TapTimer",
+												"value": "0.25"
+											}
+										}
+									],
+									"sid": 551765262496306
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-signal",
+									"objectClass": "System",
+									"sid": 713281405823680,
+									"parameters": {
+										"tag": "\"MoveMike\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 916976317373160,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "sp_Mike",
+											"sid": 175983264328306,
+											"parameters": {
+												"instance-variable": "CurrentDir",
+												"comparison": 0,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "simulate-control",
+											"objectClass": "sp_Mike",
+											"sid": 449847638394978,
+											"behaviorType": "TileMovement",
+											"parameters": {
+												"control": "right"
+											}
+										},
+										{
+											"id": "set-mirrored",
+											"objectClass": "sp_Mike",
+											"sid": 917886500885365,
+											"parameters": {
+												"state": "not-mirrored"
+											}
+										}
+									],
+									"sid": 189147674934483
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "sp_Mike",
+											"sid": 428598174537347,
+											"parameters": {
+												"instance-variable": "CurrentDir",
+												"comparison": 0,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "simulate-control",
+											"objectClass": "sp_Mike",
+											"sid": 249507568257830,
+											"behaviorType": "TileMovement",
+											"parameters": {
+												"control": "down"
+											}
+										}
+									],
+									"sid": 469065520689579
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "sp_Mike",
+											"sid": 878322756538708,
+											"parameters": {
+												"instance-variable": "CurrentDir",
+												"comparison": 0,
+												"value": "2"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "simulate-control",
+											"objectClass": "sp_Mike",
+											"sid": 613122525437103,
+											"behaviorType": "TileMovement",
+											"parameters": {
+												"control": "left"
+											}
+										},
+										{
+											"id": "set-mirrored",
+											"objectClass": "sp_Mike",
+											"sid": 952372965788223,
+											"parameters": {
+												"state": "mirrored"
+											}
+										}
+									],
+									"sid": 194626013301925
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "sp_Mike",
+											"sid": 122810355587630,
+											"parameters": {
+												"instance-variable": "CurrentDir",
+												"comparison": 0,
+												"value": "3"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "simulate-control",
+											"objectClass": "sp_Mike",
+											"sid": 838224372541308,
+											"behaviorType": "TileMovement",
+											"parameters": {
+												"control": "up"
+											}
+										}
+									],
+									"sid": 203192842279429
+								}
+							],
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 481712321114954,
+									"parameters": {
+										"key": 32
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "sp_Mike",
+									"sid": 256841890597015,
+									"parameters": {
+										"instance-variable": "IsTrapped"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-moving",
+									"objectClass": "sp_Mike",
+									"sid": 790232160675054,
+									"behaviorType": "TileMovement",
+									"isInverted": true
+								}
+							],
+							"actions": [],
+							"sid": 771369060978596,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "sp_Mike",
+											"sid": 770443867979508,
+											"parameters": {
+												"instance-variable": "TapTimer",
+												"comparison": 3,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "signal",
+											"objectClass": "System",
+											"sid": 768398827258808,
+											"parameters": {
+												"tag": "\"MoveMike\""
+											}
+										}
+									],
+									"sid": 803681993014580
+								}
+							]
+						}
+					],
+					"sid": 487506583412280
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Animation",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-tick",
+									"objectClass": "System",
+									"sid": 200361701027908
+								}
+							],
+							"actions": [
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "sp_Mike",
+									"sid": 908037851986728,
+									"parameters": {
+										"instance-variable": "TapTimer",
+										"value": "dt"
+									}
+								}
+							],
+							"sid": 298911807361146,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-moving",
+											"objectClass": "sp_Mike",
+											"sid": 213779060079304,
+											"behaviorType": "TileMovement"
+										}
+									],
+									"actions": [],
+									"sid": 335707674477684,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "sp_Mike",
+													"sid": 320271286614942,
+													"parameters": {
+														"instance-variable": "CurrentDir",
+														"comparison": 0,
+														"value": "0"
+													}
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "sp_Mike",
+													"sid": 844380183125278,
+													"parameters": {
+														"instance-variable": "CurrentDir",
+														"comparison": 0,
+														"value": "2"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation",
+													"objectClass": "sp_Mike",
+													"sid": 268070896489357,
+													"parameters": {
+														"animation": "\"Kanan\"",
+														"from": "current-frame"
+													}
+												}
+											],
+											"sid": 326463029417561,
+											"isOrBlock": true
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "sp_Mike",
+													"sid": 796777514550817,
+													"parameters": {
+														"instance-variable": "CurrentDir",
+														"comparison": 0,
+														"value": "1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation",
+													"objectClass": "sp_Mike",
+													"sid": 309809525761151,
+													"parameters": {
+														"animation": "\"Bawah\"",
+														"from": "current-frame"
+													}
+												}
+											],
+											"sid": 528325635260234
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "sp_Mike",
+													"sid": 155023031532615,
+													"parameters": {
+														"instance-variable": "CurrentDir",
+														"comparison": 0,
+														"value": "3"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation",
+													"objectClass": "sp_Mike",
+													"sid": 201345391008460,
+													"parameters": {
+														"animation": "\"Atas\"",
+														"from": "current-frame"
+													}
+												}
+											],
+											"sid": 562940511041276
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-moving",
+											"objectClass": "sp_Mike",
+											"sid": 525097120933903,
+											"behaviorType": "TileMovement",
+											"isInverted": true
+										}
+									],
+									"actions": [],
+									"sid": 857435675666355,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "sp_Mike",
+													"sid": 369604763255156,
+													"parameters": {
+														"instance-variable": "CurrentDir",
+														"comparison": 0,
+														"value": "0"
+													}
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "sp_Mike",
+													"sid": 732051994838723,
+													"parameters": {
+														"instance-variable": "CurrentDir",
+														"comparison": 0,
+														"value": "2"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation",
+													"objectClass": "sp_Mike",
+													"sid": 484098688863891,
+													"parameters": {
+														"animation": "\"i_Kanan\"",
+														"from": "current-frame"
+													}
+												}
+											],
+											"sid": 140546935948077,
+											"isOrBlock": true
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "sp_Mike",
+													"sid": 230741779416463,
+													"parameters": {
+														"instance-variable": "CurrentDir",
+														"comparison": 0,
+														"value": "1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation",
+													"objectClass": "sp_Mike",
+													"sid": 218907652993197,
+													"parameters": {
+														"animation": "\"i_Bawah\"",
+														"from": "current-frame"
+													}
+												}
+											],
+											"sid": 584195951169803
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "sp_Mike",
+													"sid": 343099661910544,
+													"parameters": {
+														"instance-variable": "CurrentDir",
+														"comparison": 0,
+														"value": "3"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation",
+													"objectClass": "sp_Mike",
+													"sid": 536979530120828,
+													"parameters": {
+														"animation": "\"i_Atas\"",
+														"from": "current-frame"
+													}
+												}
+											],
+											"sid": 956157535293112
+										}
+									]
+								}
+							]
+						}
+					],
+					"sid": 374707165135008
 				}
 			],
-			"actions": [],
-			"sid": 587012278110465,
+			"sid": 485988110812784
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Light",
+			"description": "",
+			"isActiveOnStart": true,
 			"children": [
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-instance-variable",
-							"objectClass": "sp_Mike",
-							"sid": 735118919797774,
-							"parameters": {
-								"instance-variable": "TapTimer",
-								"comparison": 4,
-								"value": "0"
-							}
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 518012930408288
 						}
 					],
 					"actions": [
 						{
-							"id": "set-ignoring-input",
-							"objectClass": "sp_Mike",
-							"sid": 829137700661089,
-							"behaviorType": "TileMovement",
+							"id": "set-position-to-another-object",
+							"objectClass": "sp_Lighting",
+							"sid": 595335035434119,
 							"parameters": {
-								"input": "start-ignoring"
+								"object": "sp_Mike",
+								"image-point-optional": "0"
 							}
 						},
 						{
-							"id": "set-instvar-value",
-							"objectClass": "sp_Mike",
-							"sid": 126157053455685,
+							"id": "set-position-to-another-object",
+							"objectClass": "sp_BllackBg",
+							"sid": 738879111014756,
 							"parameters": {
-								"instance-variable": "CurrentDir",
-								"value": "(Self.CurrentDir +1) % 4"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "sp_Mike",
-							"sid": 851539731715154,
-							"parameters": {
-								"instance-variable": "TapTimer",
-								"value": "0"
-							}
-						},
-						{
-							"id": "set-angle",
-							"objectClass": "sp_Mike",
-							"sid": 933707814713903,
-							"parameters": {
-								"angle": "Self.CurrentDir * 90"
-							}
-						},
-						{
-							"id": "set-boolean-instvar",
-							"objectClass": "sp_Mike",
-							"sid": 536131317656953,
-							"parameters": {
-								"instance-variable": "Pending",
-								"value": "false"
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 342752987424079,
-							"parameters": {
-								"seconds": "0.15",
-								"use-timescale": true
-							}
-						},
-						{
-							"id": "set-ignoring-input",
-							"objectClass": "sp_Mike",
-							"sid": 725656988898058,
-							"behaviorType": "TileMovement",
-							"parameters": {
-								"input": "stop-ignoring"
+								"object": "sp_Mike",
+								"image-point-optional": "0"
 							}
 						}
 					],
-					"sid": 520146075394085
+					"sid": 118782726095405,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "sp_Mike",
+									"sid": 603611280057742,
+									"parameters": {
+										"instance-variable": "CurrentDir",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "rotate-toward-angle",
+									"objectClass": "sp_Lighting",
+									"sid": 522702174013981,
+									"parameters": {
+										"degrees": "15",
+										"angle": "0"
+									}
+								}
+							],
+							"sid": 981828297237814
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "sp_Mike",
+									"sid": 764195021706632,
+									"parameters": {
+										"instance-variable": "CurrentDir",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "rotate-toward-angle",
+									"objectClass": "sp_Lighting",
+									"sid": 338550031589643,
+									"parameters": {
+										"degrees": "15",
+										"angle": "90"
+									}
+								}
+							],
+							"sid": 824718238462494
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "sp_Mike",
+									"sid": 177950721733614,
+									"parameters": {
+										"instance-variable": "CurrentDir",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "rotate-toward-angle",
+									"objectClass": "sp_Lighting",
+									"sid": 774639096394235,
+									"parameters": {
+										"degrees": "15",
+										"angle": "180"
+									}
+								}
+							],
+							"sid": 996029788508963
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "sp_Mike",
+									"sid": 331292024745104,
+									"parameters": {
+										"instance-variable": "CurrentDir",
+										"comparison": 0,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "rotate-toward-angle",
+									"objectClass": "sp_Lighting",
+									"sid": 443461801815693,
+									"parameters": {
+										"degrees": "15",
+										"angle": "270"
+									}
+								}
+							],
+							"sid": 253347205046442
+						}
+					]
+				}
+			],
+			"sid": 566617297994992
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Obstacle",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Spike",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-timer",
+									"objectClass": "sp_spike",
+									"sid": 134294999785904,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"Blink\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 178189764516412,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-animation-frame",
+											"objectClass": "sp_spike",
+											"sid": 841631039057645,
+											"parameters": {
+												"frame-number": "1 - Self.AnimationFrame"
+											}
+										},
+										{
+											"id": "start-timer",
+											"objectClass": "sp_spike",
+											"sid": 812648088901626,
+											"behaviorType": "Timer",
+											"parameters": {
+												"duration": "2",
+												"type": "once",
+												"tag": "\"Blink\""
+											}
+										}
+									],
+									"sid": 344328223504737
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "sp_Mike",
+									"sid": 336529641043156,
+									"parameters": {
+										"object": "sp_spike"
+									}
+								},
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "sp_spike",
+									"sid": 350712401408295,
+									"parameters": {
+										"comparison": 0,
+										"number": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 563325324559730,
+									"parameters": {
+										"seconds": "0.1"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "sp_Mike",
+									"sid": 207149239965005,
+									"parameters": {
+										"instance-variable": "IsAlive",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 788506131140633
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-start-of-layout",
+									"objectClass": "System",
+									"sid": 380442407588083
+								}
+							],
+							"actions": [
+								{
+									"id": "start-timer",
+									"objectClass": "sp_spike",
+									"sid": 937819974419023,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "2",
+										"type": "once",
+										"tag": "\"Blink\""
+									}
+								}
+							],
+							"sid": 311274355278550
+						}
+					],
+					"sid": 332416718174984
 				},
 				{
-					"eventType": "block",
-					"conditions": [
+					"eventType": "group",
+					"disabled": false,
+					"title": "Darah",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
 						{
-							"id": "else",
-							"objectClass": "System",
-							"sid": 320573868365169
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "sp_Mike",
+									"sid": 941797733113592,
+									"parameters": {
+										"object": "sp_licin"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-speed",
+									"objectClass": "sp_Mike",
+									"sid": 285767655214183,
+									"behaviorType": "TileMovement",
+									"parameters": {
+										"x": "25",
+										"y": "25"
+									}
+								}
+							],
+							"sid": 666840351462148,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "signal",
+											"objectClass": "System",
+											"sid": 976345881997348,
+											"parameters": {
+												"tag": "\"MoveMike\""
+											}
+										}
+									],
+									"sid": 776029357588910
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "sp_Mike",
+									"sid": 608140858670992,
+									"parameters": {
+										"object": "sp_licin"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-speed",
+									"objectClass": "sp_Mike",
+									"sid": 349305469538116,
+									"behaviorType": "TileMovement",
+									"parameters": {
+										"x": "100",
+										"y": "100"
+									}
+								}
+							],
+							"sid": 584568995744909
 						}
 					],
-					"actions": [
+					"sid": 130577304318048
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Beartrap",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
 						{
-							"id": "set-instvar-value",
-							"objectClass": "sp_Mike",
-							"sid": 302929969418926,
-							"parameters": {
-								"instance-variable": "TapTimer",
-								"value": "0.25"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "sp_Mike",
+									"sid": 172642075627481,
+									"parameters": {
+										"object": "sp_BearTrap"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "sp_Mike",
+									"sid": 453411743552833,
+									"parameters": {
+										"instance-variable": "IsTrapped"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 217680581417663,
+									"parameters": {
+										"seconds": "0.25"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "sp_Mike",
+									"sid": 888155738264915,
+									"behaviorType": "TileMovement",
+									"parameters": {
+										"state": "disabled"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "sp_Mike",
+									"sid": 407019826704213,
+									"parameters": {
+										"instance-variable": "IsTrapped",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 767266762385761
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "sp_Mike",
+									"sid": 472247189036065,
+									"parameters": {
+										"object": "sp_BearTrap"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 456608709970399,
+									"parameters": {
+										"seconds": "3"
+									}
+								}
+							],
+							"sid": 557031331793094,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "sp_BearTrap",
+											"sid": 402426693516421
+										},
+										{
+											"id": "set-enabled",
+											"objectClass": "sp_Mike",
+											"sid": 919074168940893,
+											"behaviorType": "TileMovement",
+											"parameters": {
+												"state": "enabled"
+											}
+										},
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "sp_Mike",
+											"sid": 737367306539624,
+											"parameters": {
+												"instance-variable": "IsTrapped",
+												"value": "false"
+											}
+										}
+									],
+									"sid": 352475923008329
+								}
+							]
 						}
 					],
-					"sid": 126831487818273
+					"sid": 748549386663487
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Gole",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "sp_hole",
+									"sid": 896543411475905,
+									"parameters": {
+										"object": "sp_Mike"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 447672292186220
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 288858113341224,
+									"parameters": {
+										"seconds": "0.17"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "sp_Mike",
+									"sid": 752957956117817,
+									"behaviorType": "TileMovement",
+									"parameters": {
+										"state": "disabled"
+									}
+								}
+							],
+							"sid": 985800261007744,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-scale",
+											"objectClass": "sp_Mike",
+											"sid": 336250934090266,
+											"parameters": {
+												"scale": "0.8"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 582070544879650,
+											"parameters": {
+												"seconds": "0.15"
+											}
+										},
+										{
+											"id": "set-scale",
+											"objectClass": "sp_Mike",
+											"sid": 120694645836247,
+											"parameters": {
+												"scale": "0.6"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 810840116087651,
+											"parameters": {
+												"seconds": "0.15"
+											}
+										},
+										{
+											"id": "set-scale",
+											"objectClass": "sp_Mike",
+											"sid": 471691450941434,
+											"parameters": {
+												"scale": "0.4"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 704319874886119,
+											"parameters": {
+												"seconds": "0.15"
+											}
+										},
+										{
+											"id": "set-scale",
+											"objectClass": "sp_Mike",
+											"sid": 984148755568294,
+											"parameters": {
+												"scale": "0.2"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 424964488439097,
+											"parameters": {
+												"seconds": "0.15"
+											}
+										},
+										{
+											"id": "set-scale",
+											"objectClass": "sp_Mike",
+											"sid": 735845868590821,
+											"parameters": {
+												"scale": "0"
+											}
+										},
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "sp_Mike",
+											"sid": 670605251048312,
+											"parameters": {
+												"instance-variable": "IsAlive",
+												"value": "false"
+											}
+										}
+									],
+									"sid": 440394798296017
+								}
+							]
+						}
+					],
+					"sid": 622165821221559
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Fire",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "sp_Mike",
+									"sid": 761495834716921,
+									"parameters": {
+										"object": "sp_fire"
+									}
+								},
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "sp_fire",
+									"sid": 445106657035367,
+									"parameters": {
+										"comparison": 0,
+										"number": "6"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "sp_Mike",
+									"sid": 367142050161383,
+									"parameters": {
+										"instance-variable": "IsBurnt"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "sp_Mike",
+									"sid": 167649510780462,
+									"parameters": {
+										"instance-variable": "IsBurnt",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-default-color",
+									"objectClass": "sp_Mike",
+									"sid": 927520955933735,
+									"parameters": {
+										"color": "rgbEx(0, 0, 0)"
+									}
+								}
+							],
+							"sid": 687919850310717
+						}
+					],
+					"sid": 791562556157300
 				}
-			]
+			],
+			"sid": 485699057332026
 		},
 		{
 			"eventType": "block",
 			"conditions": [
-				{
-					"id": "every-tick",
-					"objectClass": "System",
-					"sid": 653752639832177
-				},
 				{
 					"id": "is-boolean-instance-variable-set",
 					"objectClass": "sp_Mike",
-					"sid": 800593236406048,
+					"sid": 898824214491541,
 					"parameters": {
-						"instance-variable": "Pending"
-					}
-				}
-			],
-			"actions": [],
-			"sid": 959624782760080,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "sp_Mike",
-							"sid": 122622617361589,
-							"parameters": {
-								"instance-variable": "TapTimer",
-								"comparison": 3,
-								"value": "0"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-boolean-instvar",
-							"objectClass": "sp_Mike",
-							"sid": 840582307009936,
-							"parameters": {
-								"instance-variable": "Pending",
-								"value": "false"
-							}
-						}
-					],
-					"sid": 844136343844722
-				}
-			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-signal",
-					"objectClass": "System",
-					"sid": 655655673696783,
-					"parameters": {
-						"tag": "\"MoveMike\""
-					}
-				}
-			],
-			"actions": [],
-			"sid": 198426067733180,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "sp_Mike",
-							"sid": 389246507657257,
-							"parameters": {
-								"instance-variable": "CurrentDir",
-								"comparison": 0,
-								"value": "0"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "simulate-control",
-							"objectClass": "sp_Mike",
-							"sid": 719236768589241,
-							"behaviorType": "TileMovement",
-							"parameters": {
-								"control": "right"
-							}
-						}
-					],
-					"sid": 557086368160094
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "sp_Mike",
-							"sid": 129426649718289,
-							"parameters": {
-								"instance-variable": "CurrentDir",
-								"comparison": 0,
-								"value": "1"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "simulate-control",
-							"objectClass": "sp_Mike",
-							"sid": 149578803830317,
-							"behaviorType": "TileMovement",
-							"parameters": {
-								"control": "down"
-							}
-						}
-					],
-					"sid": 745754359447424
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "sp_Mike",
-							"sid": 981802029206170,
-							"parameters": {
-								"instance-variable": "CurrentDir",
-								"comparison": 0,
-								"value": "2"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "simulate-control",
-							"objectClass": "sp_Mike",
-							"sid": 221451226115560,
-							"behaviorType": "TileMovement",
-							"parameters": {
-								"control": "left"
-							}
-						}
-					],
-					"sid": 713154998267927
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "sp_Mike",
-							"sid": 746055905362738,
-							"parameters": {
-								"instance-variable": "CurrentDir",
-								"comparison": 0,
-								"value": "3"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "simulate-control",
-							"objectClass": "sp_Mike",
-							"sid": 777121669889722,
-							"behaviorType": "TileMovement",
-							"parameters": {
-								"control": "up"
-							}
-						}
-					],
-					"sid": 202910871541518
-				}
-			],
-			"isOrBlock": true
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "key-is-down",
-					"objectClass": "Keyboard",
-					"sid": 709877579108789,
-					"parameters": {
-						"key": 32
-					}
-				},
-				{
-					"id": "is-moving",
-					"objectClass": "sp_Mike",
-					"sid": 950365079520590,
-					"behaviorType": "TileMovement",
+						"instance-variable": "IsAlive"
+					},
 					"isInverted": true
 				}
 			],
-			"actions": [],
-			"sid": 164081672281961,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "sp_Mike",
-							"sid": 823721846057402,
-							"parameters": {
-								"instance-variable": "TapTimer",
-								"comparison": 3,
-								"value": "0"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "signal",
-							"objectClass": "System",
-							"sid": 187671388001302,
-							"parameters": {
-								"tag": "\"MoveMike\""
-							}
-						}
-					],
-					"sid": 665693844874849
-				}
-			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "every-tick",
-					"objectClass": "System",
-					"sid": 186062403061971
-				}
-			],
 			"actions": [
 				{
-					"id": "subtract-from-instvar",
+					"id": "set-enabled",
 					"objectClass": "sp_Mike",
-					"sid": 909377674570066,
+					"sid": 605005966788534,
+					"behaviorType": "TileMovement",
 					"parameters": {
-						"instance-variable": "TapTimer",
-						"value": "dt"
+						"state": "disabled"
 					}
-				}
-			],
-			"sid": 367630226572951
-		},
-		{
-			"eventType": "block",
-			"conditions": [
+				},
 				{
-					"id": "every-tick",
+					"id": "wait",
 					"objectClass": "System",
-					"sid": 462256523121295
-				}
-			],
-			"actions": [
-				{
-					"id": "set-position-to-another-object",
-					"objectClass": "Sprite2",
-					"sid": 477850986080426,
+					"sid": 789047468861049,
 					"parameters": {
-						"object": "sp_Mike",
-						"image-point-optional": "0"
+						"seconds": "5"
 					}
 				},
 				{
-					"id": "set-position-to-another-object",
-					"objectClass": "Sprite",
-					"sid": 777680320273634,
-					"parameters": {
-						"object": "sp_Mike",
-						"image-point-optional": "0"
-					}
-				},
-				{
-					"id": "set-angle",
-					"objectClass": "Sprite2",
-					"sid": 430175532429850,
-					"parameters": {
-						"angle": "sp_Mike.Angle"
-					}
+					"id": "restart-layout",
+					"objectClass": "System",
+					"sid": 658478377496053
 				}
 			],
-			"sid": 342964625436776
+			"sid": 251085726917919
 		}
 	],
-	"sid": 826763529975231
+	"sid": 222133421616026
 }

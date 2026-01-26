@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 46602,
+	"savedWithRelease": 40702,
 	"name": "Chicken Jam",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -22,15 +22,15 @@
 		},
 		{
 			"type": "behavior",
-			"id": "EightDir",
-			"name": "8 Direction",
+			"id": "TileMovement",
+			"name": "Tile movement",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
-			"id": "TileMovement",
-			"name": "Tile movement",
+			"id": "Timer",
+			"name": "Timer",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -61,20 +61,38 @@
 			"name": "Solid",
 			"author": "Scirra",
 			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "blurhorizontal",
+			"name": "Blur horizontal",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "radialblur",
+			"name": "Radial blur",
+			"author": "Scirra",
+			"bundled": false
 		}
 	],
-	"uniqueId": "oa6ymo5o0t1",
+	"uniqueId": "cn177lficz8",
 	"objectTypes": {
 		"items": [
+			"sp_Lighting",
+			"sp_licin",
 			"sp_Mike",
+			"sp_BearTrap",
+			"sp_BllackBg",
 			"sp_TEMBok",
 			"Keyboard",
-			"Sprite",
-			"Sprite2"
+			"sp_spike",
+			"sp_hole",
+			"sp_fire"
 		],
 		"subfolders": []
 	},
-	"functionsName": "Functions",
 	"autosaveData": null,
 	"containers": [],
 	"families": {
@@ -83,8 +101,7 @@
 	},
 	"layouts": {
 		"items": [
-			"level 1",
-			"object"
+			"Assets"
 		],
 		"subfolders": []
 	},
@@ -118,33 +135,9 @@
 		"icon": {
 			"items": [
 				{
-					"name": "icon-256.png",
-					"type": "image/png",
-					"sid": 317571642606659,
-					"icon-info": {
-						"purpose": "app-icon"
-					}
-				},
-				{
-					"name": "icon-512.png",
-					"type": "image/png",
-					"sid": 966195326346440,
-					"icon-info": {
-						"purpose": "app-icon"
-					}
-				},
-				{
-					"name": "loading-logo.png",
-					"type": "image/png",
-					"sid": 898568637486202,
-					"icon-info": {
-						"purpose": "loading-logo"
-					}
-				},
-				{
 					"name": "icon-16.png",
 					"type": "image/png",
-					"sid": 580267993512882,
+					"sid": 669029695774507,
 					"icon-info": {
 						"purpose": "app-icon"
 					}
@@ -152,7 +145,7 @@
 				{
 					"name": "icon-32.png",
 					"type": "image/png",
-					"sid": 758475460933099,
+					"sid": 652269821706929,
 					"icon-info": {
 						"purpose": "app-icon"
 					}
@@ -160,7 +153,7 @@
 				{
 					"name": "icon-64.png",
 					"type": "image/png",
-					"sid": 895325922066770,
+					"sid": 437124655858755,
 					"icon-info": {
 						"purpose": "app-icon"
 					}
@@ -168,9 +161,33 @@
 				{
 					"name": "icon-128.png",
 					"type": "image/png",
-					"sid": 136010473322800,
+					"sid": 838092497837569,
 					"icon-info": {
 						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-256.png",
+					"type": "image/png",
+					"sid": 943326414400440,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-512.png",
+					"type": "image/png",
+					"sid": 486732757104245,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "loading-logo.png",
+					"type": "image/png",
+					"sid": 897275876153725,
+					"icon-info": {
+						"purpose": "loading-logo"
 					}
 				}
 			],
@@ -193,25 +210,22 @@
 		]
 	},
 	"flowcharts": {
-		"items": [
-			"Flowchart 1"
-		],
+		"items": [],
 		"subfolders": []
 	},
 	"properties": {
 		"description": "",
 		"version": "1.0.0.0",
-		"autoIncrementVersion": false,
 		"author": "",
 		"authorEmail": "",
 		"authorWebsite": "",
 		"appId": "",
 		"pixelRounding": true,
-		"zAxisScale": "regular",
+		"zAxisScale": "normalized",
 		"fov": 0.7853981633974483,
 		"useLoaderLayout": false,
 		"fullscreenMode": "letterbox-integer-scale",
-		"fullscreenQuality": "high",
+		"fullscreenQuality": "low",
 		"viewportFit": "auto",
 		"backgroundColor": [
 			0,
@@ -232,10 +246,10 @@
 			1,
 			0
 		],
-		"orientations": "any",
+		"orientations": "landscape",
 		"webgpu": "auto",
-		"multitexturing": "auto",
 		"gpuPreference": "high-performance",
+		"scriptsType": "module",
 		"framerateMode": "vsync",
 		"sampling": "nearest",
 		"downscaling": "medium",
@@ -246,13 +260,13 @@
 		"maxSpriteSheetSize": 2048,
 		"loaderStyle": "splash",
 		"preloadSounds": true,
-		"uidAllocationMode": "increment",
 		"cordovaiOSScheme": "app",
 		"cordovaAndroidScheme": "https",
+		"autoReloadScriptsOnPreview": false,
 		"exportFileStructure": "folders",
-		"scriptsType": "module"
+		"uidAllocationMode": "increment"
 	},
-	"viewportWidth": 320,
-	"viewportHeight": 180,
+	"viewportWidth": 1024,
+	"viewportHeight": 480,
 	"firstLayout": null
 }
